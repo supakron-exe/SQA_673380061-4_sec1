@@ -1,0 +1,64 @@
+package com.lab6.junit6_lab6;
+
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+class QuadraticEquationTest {
+
+    @ParameterizedTest(name = "LEDT {0} | a={1}, b={2}, c={3} → {4}")
+    @DisplayName("Activity 6.1: Limited Entry Decision Table")
+    @CsvSource({
+
+        "TC001, 0,   0,   0,   NOT_QUADRATIC",
+        "TC002, 0,   5,   3,   NOT_QUADRATIC",
+        "TC003, 0,   0,   1,   NOT_QUADRATIC",
+        "TC004, 1,   5,   1,   REAL_ROOTS",
+        "TC005, 1,   10,  1,   REAL_ROOTS",
+        "TC006, 2,   7,   1,   REAL_ROOTS",
+        "TC007, 100, 100, 1,   REAL_ROOTS",
+        "TC008, 1,   2,   1,   EQUAL_ROOTS",
+        "TC009, 4,   4,   1,   EQUAL_ROOTS",
+        "TC010, 1,   0,   0,   EQUAL_ROOTS",
+        "TC011, 1,   0,   1,   IMAGINARY_ROOTS",
+
+        "TC012, 1,   1,   1,   IMAGINARY_ROOTS",
+
+        "TC013, 100, 0,   100, IMAGINARY_ROOTS"
+    })
+    void testLEDT(String tcId, int a, int b, int c, RootNature expected) {
+        QuadraticEquation eq = new QuadraticEquation();
+        RootNature actual = eq.determineRootNature(a, b, c);
+        assertEquals(expected, actual,
+            String.format("[%s] determineRootNature(%d, %d, %d)", tcId, a, b, c));
+    }
+
+
+    @ParameterizedTest(name = "EEDT {0} | a={1}, b={2}, c={3} → {4}")
+    @DisplayName("Activity 6.2: Extended Entry Decision Table")
+    @CsvSource({
+
+        "TC001, 0,   0,   0,   NOT_QUADRATIC",  
+        "TC002, 0,   50,  25,  NOT_QUADRATIC", 
+        "TC003, 0,   100, 100, NOT_QUADRATIC", 
+        "TC004, 1,   5,   1,   REAL_ROOTS",
+        "TC005, 1,   100, 1,   REAL_ROOTS",
+        "TC006, 50,  100, 0,   REAL_ROOTS",
+        "TC007, 100, 100, 1,   REAL_ROOTS",
+        "TC008, 1,   2,   1,   EQUAL_ROOTS",
+        "TC009, 4,   4,   1,   EQUAL_ROOTS",
+        "TC010, 25,  10,  1,   EQUAL_ROOTS",
+        "TC011, 1,   0,   1,   IMAGINARY_ROOTS",
+        "TC012, 1,   1,   1,   IMAGINARY_ROOTS",
+        "TC013, 100, 0,   100, IMAGINARY_ROOTS"
+    })
+    void testEEDT(String tcId, int a, int b, int c, RootNature expected) {
+        QuadraticEquation eq = new QuadraticEquation();
+        RootNature actual = eq.determineRootNature(a, b, c);
+        assertEquals(expected, actual,
+            String.format("[%s] determineRootNature(%d, %d, %d)", tcId, a, b, c));
+    }
+}

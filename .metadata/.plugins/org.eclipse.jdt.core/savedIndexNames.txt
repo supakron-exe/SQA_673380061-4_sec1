@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+C:\Users\jamma\Downloads\Lab6\.metadata\.plugins\org.eclipse.jdt.core
+3958085695.index
+3900390921.index
+45746274.index
+949929161.index
+3058675273.index
+1249461466.index
+1865797976.index
+905982855.index
