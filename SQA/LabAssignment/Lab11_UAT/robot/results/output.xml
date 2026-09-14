@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.10 on win32)" generated="2026-09-14T22:45:25.044776" rpa="false" schemaversion="5">
+<suite id="s1" name="UAT-Lab11-001" source="C:\Users\User456\Documents\SQA_Lab\robot\UAT-Lab11-001.robot">
+<kw name="Open Test Browser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:25.497023" level="INFO">Opening browser 'Chrome' to base url 'http://sampleapp.tricentis.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-14T22:45:25.497023" elapsed="6.741864"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-14T22:45:32.238887" elapsed="0.030001"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>20s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-09-14T22:45:32.268888" elapsed="0.002003"/>
+</kw>
+<status status="PASS" start="2026-09-14T22:45:25.495023" elapsed="6.775868"/>
+</kw>
+<test id="s1-t1" name="TC01_Open_Main_Page" line="11">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:32.272894" level="INFO">Opening url 'http://sampleapp.tricentis.com/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-14T22:45:32.272894" elapsed="0.562925"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:32.837816" level="INFO">Clicking element 'id=nav_automobile'.</msg>
+<arg>id=nav_automobile</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:32.835819" elapsed="1.738535"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:37.574814" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:34.574354" elapsed="3.000460"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.579971" level="INFO">Current location contains 'app.php'.</msg>
+<arg>app.php</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.574814" elapsed="0.006152"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.662751" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2026-09-14T22:45:37.663751" level="FAIL">Page should have contained text 'Tricentis Vehicle Insurance' but did not.</msg>
+<arg>Tricentis Vehicle Insurance</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="FAIL" start="2026-09-14T22:45:37.580966" elapsed="0.083880">Page should have contained text 'Tricentis Vehicle Insurance' but did not.</status>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<arg>TC01_MainPage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2026-09-14T22:45:37.664846" elapsed="0.000000"/>
+</kw>
+<doc>No.1 Open Insurance Main Page - เปิด Chrome แล้วกรอก URL</doc>
+<status status="FAIL" start="2026-09-14T22:45:32.271887" elapsed="5.392959">Page should have contained text 'Tricentis Vehicle Insurance' but did not.</status>
+</test>
+<test id="s1-t2" name="TC02_Enter_Vehicle_Data" line="20">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.665848" level="INFO">Selecting options from selection list 'id=make' by value BMW.</msg>
+<arg>id=make</arg>
+<arg>BMW</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.664846" elapsed="0.038166"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.704026" level="INFO">Typing text '110' into text field 'id=engineperformance'.</msg>
+<arg>id=engineperformance</arg>
+<arg>110</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.703012" elapsed="0.045999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.749011" level="INFO">Typing text '09/09/2020' into text field 'id=dateofmanufacture'.</msg>
+<arg>id=dateofmanufacture</arg>
+<arg>09/09/2020</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.749011" elapsed="0.058939"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.807950" level="INFO">Selecting options from selection list 'id=numberofseats' by value 5.</msg>
+<arg>id=numberofseats</arg>
+<arg>5</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.807950" elapsed="0.031435"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.839385" level="INFO">Selecting options from selection list 'id=fuel' by value Electric Power.</msg>
+<arg>id=fuel</arg>
+<arg>Electric Power</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.839385" elapsed="0.030629"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.870014" level="INFO">Typing text '30000' into text field 'id=listprice'.</msg>
+<arg>id=listprice</arg>
+<arg>30000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.870014" elapsed="0.041391"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.911405" level="INFO">Typing text 'CKK1234' into text field 'id=licenseplatenumber'.</msg>
+<arg>id=licenseplatenumber</arg>
+<arg>CKK1234</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.911405" elapsed="0.041999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.953404" level="INFO">Typing text '10000' into text field 'id=annualmileage'.</msg>
+<arg>id=annualmileage</arg>
+<arg>10000</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.953404" elapsed="0.042000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:37.995404" level="INFO">Clicking button 'id=nextenterinsurantdata'.</msg>
+<arg>id=nextenterinsurantdata</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:37.995404" elapsed="0.046009"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:40.041649" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:38.041413" elapsed="2.000236"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.050649" level="INFO">Current page contains text 'Enter Insurant Data'.</msg>
+<arg>Enter Insurant Data</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.041649" elapsed="0.009000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.123993" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC02_Vehicle.png"&gt;&lt;img src="TC02_Vehicle.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC02_Vehicle.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.050649" elapsed="0.073344"/>
+</kw>
+<doc>No.2 กรอกข้อมูลรถ Automobile ตาม Lab11-001</doc>
+<status status="PASS" start="2026-09-14T22:45:37.664846" elapsed="2.460148"/>
+</test>
+<test id="s1-t3" name="TC03_Enter_Insurant_Data" line="35">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.125994" level="INFO">Typing text 'Wichai' into text field 'id=firstname'.</msg>
+<arg>id=firstname</arg>
+<arg>Wichai</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.124994" elapsed="0.059000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.184994" level="INFO">Typing text 'Sandee' into text field 'id=lastname'.</msg>
+<arg>id=lastname</arg>
+<arg>Sandee</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.184994" elapsed="0.057000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.241994" level="INFO">Typing text '01/31/1990' into text field 'id=birthdate'.</msg>
+<arg>id=birthdate</arg>
+<arg>01/31/1990</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.241994" elapsed="0.079149"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.321143" level="INFO">Executing JavaScript:
+document.getElementById('gendermale').click();
+Without any arguments.</msg>
+<arg>document.getElementById('gendermale').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.321143" elapsed="0.005999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.327142" level="INFO">Typing text 'KKU' into text field 'id=streetaddress'.</msg>
+<arg>id=streetaddress</arg>
+<arg>KKU</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.327142" elapsed="0.047000"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.374142" level="INFO">Selecting options from selection list 'id=country' by value Thailand.</msg>
+<arg>id=country</arg>
+<arg>Thailand</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.374142" elapsed="0.040958"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.416098" level="INFO">Typing text '40002' into text field 'id=zipcode'.</msg>
+<arg>id=zipcode</arg>
+<arg>40002</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.415100" elapsed="0.056997"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.473097" level="INFO">Typing text 'Khon Kaen' into text field 'id=city'.</msg>
+<arg>id=city</arg>
+<arg>Khon Kaen</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.473097" elapsed="0.046074"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.520171" level="INFO">Selecting options from selection list 'id=occupation' by value Employee.</msg>
+<arg>id=occupation</arg>
+<arg>Employee</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.519171" elapsed="0.040001"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.559172" level="INFO">Executing JavaScript:
+document.getElementById('other').click();
+Without any arguments.</msg>
+<arg>document.getElementById('other').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.559172" elapsed="0.006998"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:40.567177" level="INFO">Clicking button 'id=nextenterproductdata'.</msg>
+<arg>id=nextenterproductdata</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.567177" elapsed="0.048140"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:42.615613" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:40.615317" elapsed="2.000296"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.622791" level="INFO">Current page contains text 'Enter Product Data'.</msg>
+<arg>Enter Product Data</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.615613" elapsed="0.007178"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.681621" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC03_Insurant.png"&gt;&lt;img src="TC03_Insurant.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC03_Insurant.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.622791" elapsed="0.059832"/>
+</kw>
+<doc>No.3 กรอกข้อมูลผู้เอาประกัน</doc>
+<status status="PASS" start="2026-09-14T22:45:40.124994" elapsed="2.557629"/>
+</test>
+<test id="s1-t4" name="TC04_Enter_Product_Data" line="52">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.683623" level="INFO">Typing text '12/01/2026' into text field 'id=startdate'.</msg>
+<arg>id=startdate</arg>
+<arg>12/01/2026</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.683623" elapsed="0.064998"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.749617" level="INFO">Selecting options from selection list 'id=insurancesum' by value 7000000.</msg>
+<arg>id=insurancesum</arg>
+<arg>7000000</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.749617" elapsed="0.036999"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.786616" level="INFO">Selecting options from selection list 'id=meritrating' by value Bonus 1.</msg>
+<arg>id=meritrating</arg>
+<arg>Bonus 1</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.786616" elapsed="0.033956"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.820572" level="INFO">Selecting options from selection list 'id=damageinsurance' by value No Coverage.</msg>
+<arg>id=damageinsurance</arg>
+<arg>No Coverage</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.820572" elapsed="0.033999"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.854571" level="INFO">Executing JavaScript:
+document.getElementById('EuroProtection').click();
+Without any arguments.</msg>
+<arg>document.getElementById('EuroProtection').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.854571" elapsed="0.007001"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.862573" level="INFO">Selecting options from selection list 'id=courtesycar' by value Yes.</msg>
+<arg>id=courtesycar</arg>
+<arg>Yes</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.862573" elapsed="0.035000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:42.898573" level="INFO">Clicking button 'id=nextselectpriceoption'.</msg>
+<arg>id=nextselectpriceoption</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.897573" elapsed="0.049998"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:46.948294" level="INFO">Slept 4 seconds.</msg>
+<arg>4s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:42.947571" elapsed="4.000723"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:46.958295" level="INFO">Current page contains text 'Select Price Option'.</msg>
+<arg>Select Price Option</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:45:46.948294" elapsed="0.011000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:46.971293" level="INFO">Current page contains text 'Silver'.</msg>
+<arg>Silver</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:45:46.959294" elapsed="0.011999"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:47.037669" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC04_Product.png"&gt;&lt;img src="TC04_Product.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC04_Product.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-14T22:45:46.971293" elapsed="0.066376"/>
+</kw>
+<doc>No.4 กรอกข้อมูล Product - หมายเหตุ: ใช้ 12/01/2026 แทน 10/01/2026 เพราะระบบต้อง Start Date ล่วงหน้า &gt;30 วัน (ทดสอบ 14/09/2026)</doc>
+<status status="PASS" start="2026-09-14T22:45:42.682623" elapsed="4.355046"/>
+</test>
+<test id="s1-t5" name="TC05_Select_Price_Option" line="66">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:47.038669" level="INFO">Executing JavaScript:
+document.querySelectorAll("label.choosePrice span.ideal-radio")[0].click();
+Without any arguments.</msg>
+<arg>document.querySelectorAll("label.choosePrice span.ideal-radio")[0].click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-14T22:45:47.038669" elapsed="0.009000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:49.049438" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:47.047669" elapsed="2.001769"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:49.049438" level="INFO">Executing JavaScript:
+document.getElementById('nextsendquote').click();
+Without any arguments.</msg>
+<arg>document.getElementById('nextsendquote').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2026-09-14T22:45:49.049438" elapsed="0.013392"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:45:52.064655" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:49.062830" elapsed="3.001825"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.071839" level="INFO">Current page contains text 'Send Quote'.</msg>
+<arg>Send Quote</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.064655" elapsed="0.007184"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.134622" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC05_Price.png"&gt;&lt;img src="TC05_Price.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC05_Price.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.071839" elapsed="0.063782"/>
+</kw>
+<doc>No.5 เลือก Silver</doc>
+<status status="PASS" start="2026-09-14T22:45:47.038669" elapsed="5.096952"/>
+</test>
+<test id="s1-t6" name="TC06_Send_Quote" line="75">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.135621" level="INFO">Typing text 'wichai.sandee@gmail.com' into text field 'id=email'.</msg>
+<arg>id=email</arg>
+<arg>wichai.sandee@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.135621" elapsed="0.075893"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.212515" level="INFO">Typing text '0049201123456' into text field 'id=phone'.</msg>
+<arg>id=phone</arg>
+<arg>0049201123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.211514" elapsed="0.051001"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.262515" level="INFO">Typing text 'wichai.sandee' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>wichai.sandee</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.262515" elapsed="0.053121"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.315636" level="INFO">Typing text 'SecretPassword123!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>SecretPassword123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.315636" elapsed="0.066567"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.383204" level="INFO">Typing text 'SecretPassword123!' into text field 'id=confirmpassword'.</msg>
+<arg>id=confirmpassword</arg>
+<arg>SecretPassword123!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.383204" elapsed="0.068502"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.451706" level="INFO">Typing text 'Please contact via email only' into text field 'id=Comments'.</msg>
+<arg>id=Comments</arg>
+<arg>Please contact via email only</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.451706" elapsed="0.074000"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:45:52.525706" level="INFO">Clicking button 'id=sendemail'.</msg>
+<arg>id=sendemail</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.525706" elapsed="0.036637"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-14T22:46:07.562520" level="INFO">Slept 15 seconds.</msg>
+<arg>15s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-14T22:45:52.562343" elapsed="15.000177"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:46:07.574512" level="INFO">Current page contains text 'Sending e-mail success!'.</msg>
+<arg>Sending e-mail success!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-14T22:46:07.562520" elapsed="0.011992"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-09-14T22:46:07.672441" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="TC06_Success.png"&gt;&lt;img src="TC06_Success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>TC06_Success.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-09-14T22:46:07.574512" elapsed="0.097929"/>
+</kw>
+<doc>No.6 ส่งอีเมลขอใบเสนอราคา</doc>
+<status status="PASS" start="2026-09-14T22:45:52.135621" elapsed="15.536820"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-14T22:46:07.672441" elapsed="2.164477"/>
+</kw>
+<status status="FAIL" start="2026-09-14T22:45:25.045777" elapsed="44.791141"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="UAT-Lab11-001" id="s1" pass="5" fail="1" skip="0">UAT-Lab11-001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
